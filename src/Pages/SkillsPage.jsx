@@ -55,18 +55,10 @@ import Navigation from '../components/Navigation/Navigation';
 const SkillPage = () => {
   const navigate = useNavigate(); 
   const subjects = [
-    { 
-      name: 'Web Development', 
-      backgroundColor: '#FF6B00', 
-      route: '/topics-webdevelopment',
-      imageUrl: '/assets/web-development.svg' 
-    },
-    { 
-      name: 'AI/ML', 
-      backgroundColor: '#0088CC', 
-      route: '/topics-ai',
-      imageUrl: '/assets/ai-ml.png' 
-    }
+    { name: 'Web Development', color: 'bg-blue-600', route: '/topics-webdevelopment' },
+    { name: 'AI/ML', color: 'bg-blue-700', route: '/topics-ai' },
+    { name: 'collaborative-whiteboard', color: 'bg-blue-700', route: '/whiteboard' }
+
   ];
 
   const handleCardClick = (route) => {
