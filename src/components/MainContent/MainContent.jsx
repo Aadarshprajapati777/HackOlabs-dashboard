@@ -6,8 +6,12 @@ const ImageSlider = () => {
   
   const slides = [
     { image: '/assets/banner-images1.jpg' },
+    { image: '/assets/banner-images2.jpg' },
+    { image: '/assets/banner-images3.jpg' },
+    { image: '/assets/banner-images4.jpg' },
     { image: '/assets/banner-images5.jpg' },
-    { image: '/assets/banner-images6.jpg' }
+    { image: '/assets/banner-images6.jpg' },
+
   ];
 
   useEffect(() => {
