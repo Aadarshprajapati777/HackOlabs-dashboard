@@ -79,7 +79,7 @@ const SUBJECTS = [
     subject: 'SKILL DEVELOPMENT',
     imageUrl: '/assets/skillDev.jpg',
     backgroundColor: SUBJECT_COLORS.RED,
-    path: '../SkillPage'
+    path: '/SkillsPage'
   }
 ];
 
