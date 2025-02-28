@@ -1,24 +1,28 @@
-
 import React from 'react';
 import SubjectCard from '../components/Model/SubjectCard';
-// import SubjectCard from '../components/MainContent/SubjectCard'
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
 
-const WebDevPage = () => {
+const MlPage = () => {
   const navigate = useNavigate(); 
   const subjects = [
     { 
-      name: 'Basic Web Dev', 
-      backgroundColor: '#FF6B00', // blue-600 equivalent  #0088CC
-      route: '/section-webdev',
-      imageUrl: '/assets/basic_web.jpg' // Add your image path here
+      name: 'Linear Regression', 
+      backgroundColor: '#FF6B00', 
+      route: '/section-linear-regression',
+      imageUrl: '/assets/lin-reg.png' 
     },
+    { 
+      name: 'Logistic Regression', 
+      backgroundColor: '#0088CC', // blue-700 equivalent
+      route: '/section-logistic-regression',
+      imageUrl: '/assets/log-reg.png'
+    }
   ];
 
   const handleCardClick = (route) => {
-    navigate(route);  // Navigate to the corresponding route
+    navigate(route); 
   };
 
   return (
@@ -29,7 +33,7 @@ const WebDevPage = () => {
         {/* Heading Section */}
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Learn Web Development
+            Learn AI Machine Learning
           </h1>
           <h2 className="text-3xl font-bold text-[#0088CC]">Click to learn.</h2>
         </div>
@@ -51,4 +55,4 @@ const WebDevPage = () => {
   );
 };
 
-export default WebDevPage;
+export default MlPage;

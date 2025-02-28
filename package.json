@@ -12,8 +12,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.24.2",
-    "fabric": "^4.6.0",
-    "liveblocks": "^0.0.3",
+    "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "peerjs": "^1.5.4",
     "react": "^18.2.0",
@@ -22,10 +21,7 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-router-dom": "^7.2.0",
-    "react-scripts": "5.0.1",
-    "react-use": "^17.6.0",
-    "simple-peer": "^9.11.1",
-    "socket.io-client": "^4.8.1",
+    "react-scripts": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
