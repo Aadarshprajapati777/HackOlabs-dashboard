@@ -20,11 +20,13 @@ function App() {
         <Route from="*" to="/" />
         <Route path="/SkillsPage" element={<SkillsPage />} />
         <Route path="/topics-ai" element={<TopicsAiMlPage />} />
-        <Route path="/topics-webdevelopment" element={<TopicsWebDevelopmentPage />} /> 
+        <Route path="/topics-webdevelopment" element={<TopicsWebDevelopmentPage />} />
         <Route path="/simulator-webdevelopment" element={<WebSimulator />} />
-        <Route path = "/section-webdev" element={<WebDevSection />} />
-        <Route path = "/section-linear-regression" element={<LinearRegressionSection />} />
-        <Route path = "/section-logistic-regression" element={<LogisticRegressionSection />} />
+        <Route path="/section-webdev" element={<WebDevSection />} />
+        <Route path="/section-linear-regression" element={<LinearRegressionSection />} />
+        <Route path="/section-logistic-regression" element={<LogisticRegressionSection />} />
+        <Route path="/whiteboard/:roomId" element={<WhiteboardWithId />} />
+        <Route path="/whiteboardpage" element={<WhiteBoard />} />
 
 
 
