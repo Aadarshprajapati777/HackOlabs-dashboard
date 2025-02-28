@@ -1,20 +1,34 @@
 import React from 'react';
-import SubjectCard from '../components/Model/SubjectCard';
+import SubjectCard from '../components/Model/SubjectCard'
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
 
-const SkillsPage = () => {
+const SkillPage = () => {
   const navigate = useNavigate(); 
   const subjects = [
-    { name: 'Web Development', color: 'bg-blue-600', route: '/topics-webdevelopment' },
-    { name: 'AI/ML', color: 'bg-blue-700', route: '/topics-ai' },
-    { name: 'collaborative-whiteboard', color: 'bg-blue-700', route: '/whiteboard' }
-
+    { 
+      name: 'Web Development', 
+      backgroundColor: '#FF6B00', 
+      route: '/topics-webdevelopment',
+      imageUrl: '/assets/web-development.svg' 
+    },
+    { 
+      name: 'AI/ML', 
+      backgroundColor: '#0088CC', 
+      route: '/topics-ai',
+      imageUrl: '/assets/ai-ml.png' 
+    },
+    { 
+      name: 'Collaborative Whiteboard', 
+      backgroundColor: '#8CC63F', 
+      route: '/topics-webdevelopment',
+      imageUrl: '/assets/collab-learn.png' 
+    },
   ];
 
   const handleCardClick = (route) => {
-    navigate(route);  // Navigate to the corresponding route
+    navigate(route);  
   };
 
   return (
@@ -27,7 +41,7 @@ const SkillsPage = () => {
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             Learn Skills
           </h1>
-          <h2 className="text-3xl font-bold text-blue-800">Click to learn.</h2>
+          <h2 className="text-3xl font-bold text-[#0088CC]">Click to learn.</h2>
         </div>
 
         {/* Subjects Grid */}
@@ -36,7 +50,9 @@ const SkillsPage = () => {
             <div key={index} onClick={() => handleCardClick(subject.route)}>
               <SubjectCard
                 subject={subject.name}
-                color={subject.color}
+                imageUrl={subject.imageUrl}
+                backgroundColor={subject.backgroundColor}
+                // Don't pass path prop since we're handling navigation in the parent
               />
             </div>
           ))}
@@ -46,4 +62,4 @@ const SkillsPage = () => {
   );
 };
 
-export default SkillsPage;
+export default SkillPage;
