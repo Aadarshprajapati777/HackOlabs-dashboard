@@ -1,7 +1,7 @@
 
 import React from 'react';
-// import SubjectCard from '../components/Model/SubjectCard';
-import SubjectCard from '../components/MainContent/SubjectCard'
+import SubjectCard from '../components/Model/SubjectCard';
+// import SubjectCard from '../components/MainContent/SubjectCard'
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
