@@ -8,6 +8,8 @@ import LinearRegressionSection from './Section/Ai-Ml/linear-regression';
 import WebSimulator from './Pages/WebSimulator';
 import LogisticRegressionSection from './Section/Ai-Ml/logisitic-regression';
 import TopicsAiMlPage from './Pages/TopicsAiMLPage';
+import WhiteBoard from './Pages/WhiteBoardPage';
+import WhiteboardWithId from './Pages/WhiteBoard';
 
 function App() {
 
