@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 const ChatBox = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -20,17 +20,19 @@ const ChatBox = () => {
 
   // Determine chatbot role based on the current page
   const getChatbotRole = (page) => {
-    if (page === '/' || page === '') {
-      return 'a versatile study assistant ready to help with any topic';
-    } else if (page.toLowerCase().includes('ai') || page.toLowerCase().includes('ml')) {
-      return 'an expert in AI/ML, providing deep insights and explanations on artificial intelligence and machine learning';
-    } else if (page.toLowerCase().includes('web')) {
-      return 'a seasoned web development instructor, offering guidance on modern web technologies and best practices';
+    const chatbotName = 'Olabs Mentor ';
+    
+    if (!page || page === '/') {
+      return `${chatbotName}, a versatile study assistant ready to help with any topic.`;
+    } else if (/ai|ml/i.test(page)) {
+      return `${chatbotName}, an AI/ML expert providing deep insights, explanations, and hands-on guidance in artificial intelligence and machine learning.`;
+    } else if (/web/i.test(page)) {
+      return `${chatbotName}, a seasoned web development mentor, helping you master modern frameworks, best practices, and industry standards.`;
     } else {
-      return 'a knowledgeable study assistant';
+      return `${chatbotName}, a knowledgeable study assistant ready to support your learning journey.`;
     }
   };
-
+  
   useEffect(() => {
     if (isChatOpen) {
       // Set the current page to the URL pathname
@@ -65,26 +67,44 @@ const ChatBox = () => {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
   const generateResponse = async (userInput) => {
     try {
       setIsLoading(true);
-      // Determine the chatbot role based on the current page
+  
+      // Determine chatbot role based on the current page
       const role = getChatbotRole(currentPage);
-      // Compose a detailed and context-aware prompt
-      const context = `You are ${role}. The current page is "${currentPage}". The student asks: "${userInput}". Please provide a clear, concise, and informative response that is tailored to this context.`;
+  
+      // Strict prompt engineering
+      const context = `
+        You are ${role}. Your responses must be:
+        - Highly accurate and strictly based on facts.
+        - Free from hallucination, speculation, or made-up information.
+        - Well-structured, with clear explanations and, if necessary, step-by-step breakdowns.
+        - Context-aware, considering the user's query and the page context.
+        - Concise yet informative. If a topic requires depth, break it into key sections.
+        - Citing relevant sources or referring to established knowledge when applicable.
+  
+        Instructions:
+        - If a question is ambiguous, ask clarifying questions before responding.
+        - If an answer is unknown, explicitly state that rather than guessing.
+        - For technical queries, provide code snippets, best practices, and explanations.
+        - Ensure responses align with the latest industry standards.
+  
+        User Query:
+        "${userInput}"
+      `;
       
       const result = await model.generateContent(context);
       const response = await result.response;
       return response.text();
     } catch (error) {
       console.error("Error generating response:", error);
-      return "Sorry, I'm having trouble understanding. Could you rephrase that?";
+      return "Sorry, I'm unable to process this request accurately at the moment.";
     } finally {
       setIsLoading(false);
     }
   };
-
+  
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
 

@@ -27,14 +27,6 @@ function App() {
         <Route path="/section-logistic-regression" element={<LogisticRegressionSection />} />
         <Route path="/whiteboard/:roomId" element={<WhiteboardWithId />} />
         <Route path="/whiteboardpage" element={<WhiteBoard />} />
-
-
-
-
-
-
-
-
       </Routes>
     </div>
   );

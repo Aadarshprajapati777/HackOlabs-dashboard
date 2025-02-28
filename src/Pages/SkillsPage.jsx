@@ -3,7 +3,7 @@ import SubjectCard from '../components/Model/SubjectCard'
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
-
+import  Chatbot from "../components/Chatbot/Chatbot"
 const SkillPage = () => {
   const navigate = useNavigate(); 
   const subjects = [
@@ -35,6 +35,7 @@ const SkillPage = () => {
     <main className="flex-grow">
       <Header />
       <Navigation />
+      <Chatbot />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Heading Section */}
         <div className="mb-10">
