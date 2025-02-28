@@ -22,7 +22,7 @@ const SkillPage = () => {
     { 
       name: 'Collaborative Whiteboard', 
       backgroundColor: '#8CC63F', 
-      route: '/topics-webdevelopment',
+      route: '/whiteboardpage',
       imageUrl: '/assets/collab-learn.png' 
     },
   ];
