@@ -1,5 +1,5 @@
 import React from 'react';
-import SubjectCard from '../components/SubjectCard/SubjectCard';
+import SubjectCard from '../components/Model/SubjectCard';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
