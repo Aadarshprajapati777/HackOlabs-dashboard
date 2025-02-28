@@ -1,4 +1,5 @@
 import React from 'react';
+import SubjectCard  from './SubjectCard';
 // Constants for reusable colors
 const SUBJECT_COLORS = {
   ORANGE: '#FF6B00',
@@ -86,7 +87,10 @@ const SubjectGrid = () => (
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {SUBJECTS.map((data) => (
-       console.log("Subject Cards")
+        <SubjectCard
+          key={data.subject}
+          {...data}
+        />
       ))}
     </div>
   </div>
