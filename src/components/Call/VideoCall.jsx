@@ -348,6 +348,7 @@ import {
   StreamVideo,
   CallParticipantsList,
   PaginatedGridLayout,
+  
 } from '@stream-io/video-react-sdk';
 import { Loader, Copy, X, Mic, MicOff, Video, VideoOff, Phone, Share2, Users, Monitor, MoreHorizontal, Maximize, Settings } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
@@ -394,7 +395,7 @@ const VideoCall = () => {
         }
 
         // Fetch token from backend
-        const response = await fetch('http://localhost:3001/api/get-stream-token', {
+        const response = await fetch('https://olabs-backend-1.onrender.com/api/get-stream-token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -618,7 +619,7 @@ const VideoCall = () => {
                       <rect width="15" height="10" x="1" y="7" rx="2" ry="2" />
                     </svg>
                   </div>
-                  <span className="font-bold text-lg hidden sm:inline">Stream Video</span>
+                  <span className="font-bold text-lg hidden sm:inline">Olabs Collaborative</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="bg-gray-700 text-white text-xs px-2 py-1 rounded-full flex items-center">
