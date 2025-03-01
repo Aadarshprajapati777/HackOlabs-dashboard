@@ -13,6 +13,8 @@ import WhiteBoard from './Pages/WhiteBoard';
 import CollabPage from './Pages/CollabPage';
 import CreateCall from './components/Call/CreateCall';
 import VideoCall from './components/Call/VideoCall';
+import LinearRegressionSimulator from './Pages/LinearRegressionSimulator';
+import LogisticRegressionSimulator from './Pages/LogisticRegressionSimulator';
 function App() {
 
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path="/collab" element={<CollabPage />} />
         <Route path="/createcall" element={<CreateCall />} />
         <Route path="/call/:callId" element={<VideoCall />} />
+        <Route path = "/simulator-linear-regression" element={<LinearRegressionSimulator />} />
+        <Route path = "/simulator-logistic-regression" element={<LogisticRegressionSimulator />} />
       </Routes>
     </div>
   );
