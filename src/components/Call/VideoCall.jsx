@@ -48,7 +48,7 @@ const VideoCall = () => {
         if (userName) localStorage.setItem('streamUserName', userName);
 
         // Fetch token from backend
-        const response = await fetch('http://localhost:3001/api/get-stream-token', {
+        const response = await fetch('https://olabs-backend-1.onrender.com/api/get-stream-token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
