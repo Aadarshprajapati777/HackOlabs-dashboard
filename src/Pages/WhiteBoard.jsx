@@ -195,21 +195,12 @@ export default function WhiteboardPage() {
                     <Button.Group className="space-x-2">
                         <Button
                             type="primary"
-                            icon={<Phone size={18} />}
-                            onClick={() => setIsVideoCallOpen(true)}
-                            className="bg-emerald-500 hover:bg-emerald-600 border-none rounded-lg"
-                            shape="round"
-                        >
-                            Audio
-                        </Button>
-                        <Button
-                            type="primary"
                             icon={<Video size={18} />}
-                            onClick={() => setIsVideoCallOpen(true)}
+                            onClick={() => navigate('/createcall')}
                             className="bg-violet-500 hover:bg-violet-600 border-none rounded-lg"
                             shape="round"
                         >
-                            Video
+                            Olabs Meet
                         </Button>
                     </Button.Group>
                 </div>

@@ -8,9 +8,11 @@ import LinearRegressionSection from './Section/Ai-Ml/linear-regression';
 import WebSimulator from './Pages/WebSimulator';
 import LogisticRegressionSection from './Section/Ai-Ml/logisitic-regression';
 import TopicsAiMlPage from './Pages/TopicsAiMLPage';
-import WhiteBoard from './Pages/WhiteBoardPage';
-import WhiteboardWithId from './Pages/WhiteBoard';
-
+// import WhiteBoard from './Pages/WhiteBoardPage';
+import WhiteBoard from './Pages/WhiteBoard';
+import CollabPage from './Pages/CollabPage';
+import CreateCall from './components/Call/CreateCall';
+import VideoCall from './components/Call/VideoCall';
 function App() {
 
   return (
@@ -25,8 +27,11 @@ function App() {
         <Route path="/section-webdev" element={<WebDevSection />} />
         <Route path="/section-linear-regression" element={<LinearRegressionSection />} />
         <Route path="/section-logistic-regression" element={<LogisticRegressionSection />} />
-        <Route path="/whiteboard/:roomId" element={<WhiteboardWithId />} />
         <Route path="/whiteboardpage" element={<WhiteBoard />} />
+
+        <Route path="/collab" element={<CollabPage />} />
+        <Route path="/createcall" element={<CreateCall />} />
+        <Route path="/call/:callId" element={<VideoCall />} />
       </Routes>
     </div>
   );

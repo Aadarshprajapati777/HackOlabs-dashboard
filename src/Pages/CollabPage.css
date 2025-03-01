@@ -1,0 +1,19 @@
+.collab-container {
+    height: 100vh;
+    width: 100%;
+    background-color: #1c1e22;
+  }
+  
+  .video-container {
+    height: calc(100vh - 80px);
+    position: relative;
+  }
+  
+  .str-video__speaker-layout {
+    background-color: #2a2d34;
+  }
+  
+  .str-video__call-controls {
+    background-color: #2a2d34;
+    border-top: 1px solid #3e424a;
+  }
